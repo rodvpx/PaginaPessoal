@@ -1,0 +1,256 @@
+/* Resetando o estilo padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    padding-top: 80px; /* Espaçamento para a navbar fixa */
+    margin: 0;
+}
+
+.foto {
+    width: 50px;  /* Defina o tamanho da largura */
+    height: 50px; /* Defina a altura igual à largura para garantir que seja redonda */
+    border-radius: 50%; /* Isso torna a imagem redonda */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    object-position: top;
+}
+
+/* Estilos da seção */
+.intro {
+    display: flex;
+    justify-content: space-between; /* Coloca a imagem e o texto nos lados opostos */
+    align-items: center; /* Alinha verticalmente o conteúdo */
+    gap: 20px; /* Espaçamento entre a imagem e o texto */
+    padding: 40px; /* Adiciona um pouco de padding */
+}
+
+/* Estilo para a imagem */
+.intro-img {
+    width: 600px; /* Define a largura da imagem (ajuste conforme necessário) */
+    height: 450px; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Adiciona borda arredondada à imagem */
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Estilo para o texto */
+.intro-text {
+    max-width: 45%; /* Garante que o texto não ocupe muito espaço */
+}
+
+.intro-text h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.intro-text h3.highlight {
+    font-size: 1.5em;
+    color: #ffcc00; /* Cor amarela para o destaque */
+}
+
+
+/* Header fixo no topo */
+header {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Garante que a navbar fique acima do conteúdo */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar h1 {
+    margin-left: 10px;
+    font-size: 1.5em;
+}
+
+.navbar .menu {
+    display: flex;
+    list-style: none;
+}
+
+.navbar .menu li {
+    margin: 0 15px;
+}
+
+.navbar .menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.navbar .menu a:hover {
+    text-decoration: underline;
+}
+
+.navbar .menu a.highlight {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* Card */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    background-image: url('textura.png'); /* Adicionando textura */
+    background-size: cover;
+}
+
+.card h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 2em;
+    color: #FF9800; /* Amarelo para o destaque */
+}
+
+.card p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Seção sobre com imagem deslocada */
+.sobre .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+.sobre .about-img-container {
+    position: relative;
+    z-index: 1;
+}
+
+.sobre .about-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #FF9800; /* Borda amarela */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Seção Formação com imagens */
+.formacao-content {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.formacao-content .logo-faculdade img {
+    max-width: 150px;
+}
+
+.formacao-content .university-img img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+}
+
+/* Responsividade para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar .menu li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .navbar .menu.active {
+        display: flex;
+    }
+
+    .navbar h1 {
+        margin: 10px 0;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .intro-text h2 {
+        font-size: 2em;
+    }
+
+    .intro-text h3 {
+        font-size: 1.5em;
+    }
+}
+
+/* Estilo do footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+footer p {
+    font-size: 1em;
+}
