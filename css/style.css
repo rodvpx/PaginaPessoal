@@ -6,8 +6,8 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: helvetica;
+    background-image: url("../img/backgroud.jpg");
     color: #333;
     display: flex;
     flex-direction: column;
@@ -20,7 +20,7 @@ body {
 }
 
 .foto {
-    width: 50px;  /* Defina o tamanho da largura */
+    width: 50px; /* Defina o tamanho da largura */
     height: 50px; /* Defina a altura igual à largura para garantir que seja redonda */
     border-radius: 50%; /* Isso torna a imagem redonda */
     object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
@@ -58,7 +58,7 @@ body {
 
 .intro-text h3.highlight {
     font-size: 1.5em;
-    color: #ffcc00; /* Cor amarela para o destaque */
+    color: #FF9800; /* Cor amarela para o destaque */
 }
 
 
@@ -113,7 +113,7 @@ header {
 
 .navbar .menu a.highlight {
     font-weight: bold;
-    color: #4CAF50;
+    color: #FF9800;
 }
 
 /* Card */
@@ -166,21 +166,33 @@ header {
 }
 
 /* Seção Formação com imagens */
+/* Estilo para a seção Formação */
 .formacao-content {
     display: flex;
-    justify-content: space-around;
-    gap: 20px;
+    flex-direction: column; /* Organiza itens na vertical */
+    align-items: center;
+    text-align: center; /* Centraliza o texto */
+    gap: 20px; /* Espaçamento entre o texto e as imagens */
 }
 
-.formacao-content .logo-faculdade img {
-    max-width: 150px;
+.formacao-imagens {
+    display: flex; /* Organiza as imagens lado a lado */
+    justify-content: center; /* Centraliza as imagens horizontalmente */
+    gap: 15px; /* Espaçamento entre as imagens */
 }
 
-.formacao-content .university-img img {
-    width: 100%;
+.logo-faculdade img {
+    max-width: 90px; /* Ajuste o tamanho da imagem conforme necessário */
     height: auto;
-    max-width: 500px;
 }
+
+.university-img img {
+    max-width: 600px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto;
+    border-radius: 8px; /* Suaviza as bordas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona um leve sombreado */
+}
+
 
 /* Responsividade para dispositivos móveis */
 @media screen and (max-width: 768px) {
