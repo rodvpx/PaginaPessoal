@@ -126,7 +126,6 @@ header {
     width: 100%;
     max-width: 800px;
     text-align: center;
-    background-image: url('textura.png'); /* Adicionando textura */
     background-size: cover;
 }
 
@@ -194,17 +193,45 @@ header {
 }
 
 
-/* Responsividade para dispositivos móveis */
+/* Estilo do menu */
+.navbar .menu {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.navbar .menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.navbar .menu a:hover {
+    text-decoration: underline;
+}
+
+.navbar .menu a.highlight {
+    font-weight: bold;
+    color: #FF9800;
+}
+
+/* Estilo do menu hambúrguer */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon .bar {
+    display: block;
+    width: 25px;
+    height: 4px;
+    margin: 5px auto;
+    background-color: #fff;
+}
+
+/* Responsividade */
 @media screen and (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-    }
-
+    /* O menu fica oculto inicialmente */
     .navbar .menu {
         display: none;
         flex-direction: column;
@@ -212,44 +239,63 @@ header {
         text-align: center;
     }
 
-    .navbar .menu li {
-        margin: 10px 0;
-    }
-
+    /* Ícone do menu hambúrguer */
     .menu-icon {
         display: flex;
     }
 
+    /* Menu visível quando a classe "active" for adicionada */
     .navbar .menu.active {
         display: flex;
+    }
+
+    .navbar .menu li {
+        margin: 10px 0;
     }
 
     .navbar h1 {
         margin: 10px 0;
     }
 
+    /* Ajustes no conteúdo */
+    .intro {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .intro-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .intro-text h2 {
+        font-size: 1.8em;
+    }
+
+    .intro-text h3 {
+        font-size: 1.4em;
+    }
+
+    .about-img {
+        width: 80px;
+        height: 80px;
+    }
+
     .card {
         padding: 15px;
     }
 
-    .about-content {
+    .formacao-imagens {
         flex-direction: column;
-        align-items: center;
+        gap: 10px;
     }
 
-    .about-img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .intro-text h2 {
-        font-size: 2em;
-    }
-
-    .intro-text h3 {
-        font-size: 1.5em;
+    .formacao-imagens .university-img img {
+        max-width: 90%;
     }
 }
+
 
 /* Estilo do footer */
 footer {
